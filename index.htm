@@ -26,7 +26,10 @@
             scene.add(directionalLight);
             // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
             const canvas = document.createElement("canvas");
+            canvas.width = document.documentElement.clientWidth;
+            canvas.height = document.documentElement.clientHeight;
             document.body.appendChild(canvas);
+            
             const gl = canvas.getContext("webgl", { xrCompatible: true });
 
             // Set up the WebGLRenderer, which handles rendering to the session's base layer.
